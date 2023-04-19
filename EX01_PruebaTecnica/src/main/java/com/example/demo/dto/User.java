@@ -85,6 +85,5 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", mail=" + mail + ", name="
 				+ name + ", last_name=" + last_name + ", steam=" + steam + ", creation_date=" + creation_date + "]";
-	}
-		
+	}		
 }
