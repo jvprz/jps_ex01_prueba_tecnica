@@ -5,9 +5,9 @@ CREATE TABLE users (
 	username VARCHAR(30) NOT NULL,
 	password VARCHAR(250) NOT NULL,
 	mail VARCHAR(250) NOT NULL,
-	name VARCHAT(30) NOT NULL,
-	last_name VARHCAR(250) NOT NULL,
-	steam VARCHAT(30),
+	name VARCHAR(30) NOT NULL,
+	last_name VARCHAR(250) NOT NULL,
+	steam VARCHAR(30),
 	creation_date DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -27,15 +27,15 @@ CREATE TABLE parties (
 	creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
 	game INT NOT NULL,
 	FOREIGN KEY (creator) REFERENCES users(id),
-	POREIGN KEY (game) REFERENCES videogames(id)
+	FOREIGN KEY (game) REFERENCES videogames(id)
 );
 
 CREATE TABLE members (
-	user INT NOT NULL,
+	memeber INT NOT NULL,
 	party INT NOT NULL,
 	union_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (user, party),
-	FOREIGN KEY (user) REFERENCES users(id),
+	PRIMARY KEY (memeber, party),
+	FOREIGN KEY (memeber) REFERENCES users(id),
 	FOREIGN KEY (party) REFERENCES parties(id)
 );
 
@@ -43,9 +43,8 @@ CREATE TABLE messages (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	content VARCHAR(250) NOT NULL,
 	creation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-	user INT NOT NULL,
+	author INT NOT NULL,
 	party INT NOT NULL,
-	FOREIGN KEY (user) REFERENCES users(id),
+	FOREIGN KEY (author) REFERENCES users(id),
 	FOREIGN KEY (party) REFERENCES parties(id)
 );
-
