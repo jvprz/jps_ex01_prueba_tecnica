@@ -39,11 +39,11 @@ CREATE TABLE parties (
 );
 
 CREATE TABLE members (
-	memeber INT NOT NULL,
+	member INT NOT NULL,
 	party INT NOT NULL,
 	union_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (memeber, party),
-	FOREIGN KEY (memeber) REFERENCES users(id),
+	PRIMARY KEY (member, party),
+	FOREIGN KEY (member) REFERENCES users(id),
 	FOREIGN KEY (party) REFERENCES parties(id)
 );
 

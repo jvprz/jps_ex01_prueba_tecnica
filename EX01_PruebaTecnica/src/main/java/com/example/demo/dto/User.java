@@ -36,6 +36,14 @@ public class User {
 		return username;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public LocalDateTime getCreation_date() {
+		return creation_date;
+	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
